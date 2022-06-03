@@ -9,7 +9,6 @@
     <meta name="author" content="" />
     <title>Fantastic beasts Call center</title>
     <link rel="stylesheet" href="./assets/css/styles.css" />
-    <script defer src="script.js"></script>
   </head>
   <body>
     <header>
@@ -18,14 +17,40 @@
       </div>
     </header>
     <section id="sidebar">
-      <button type="menu" id="add-button">
-        <a href = "add.html">
-        Add Contact</button></a>
+      <div id="buttons-1">
+        <button id="add-button" onclick="openAddForm()">Add Contact</button>
+      </div>
       <ul id="contacts" class="list-group">
         <li class="list-group-item">long sheep</li>
         <li class="list-group-item">small elephant</li>
         <li class="list-group-item">green monkey</li>
       </ul>
     </section>
+
+    <!-- Modals -->
+    <div id="add-modal-backdrop" class="back-drop">
+      <div id="add-modal" class="modal-wrapper">
+        <form id="submission-form" action="">
+          <label id="name" for="name">Name</label>
+          <br />
+          <input id="name-input" type="text" name="Call-name" />
+          <br />
+          <label id="number" for="number">Phone</label>
+          <br />
+          <input id="number-input" type="text" name="Call-number" />
+          <br />
+          <div id="buttons-2">
+            <button id="add-beast" type="button" onclick="addBeast()">
+              Add
+            </button>
+            <button id="close-button" type="button" onclick="closeAddForm()">
+              Close
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="./assets/scripts/script.js"></script>
   </body>
 </html>
