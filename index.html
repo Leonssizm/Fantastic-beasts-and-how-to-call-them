@@ -24,13 +24,18 @@
         <button id="add-button" onclick="openAddForm()"> Add Contact </button>
       </div>
       <ul id="contacts" class="list-group">
-
+        <!--  List Items go Here -->
       </ul>
     </section>
 
     <section id="card-display">
+      <!--  Cards go Here -->
     </section>
   </div>
+
+
+
+
   <!-- Modals -->
   <div id="add-modal-backdrop" class="back-drop">
     <div id="add-modal" class="modal-wrapper">
@@ -55,6 +60,7 @@
     </div>
   </div>
 
+  <!-- Templates -->
 
   <template id="card-template">
     <div id="cards" class="card-wrapper">
@@ -64,10 +70,11 @@
       </div>
       <div id="control-buttons">
         <button id="call-button" type="button">Call</button>
+        <!-- id should be class -->
         <button id="delete-button" type="button" onclick="deleteCard()">
           Delete
         </button>
-        <button id="cancel-button" type="button" onclick="closeCard()">
+        <button class="cancel-button" type="button" onclick="closeCard(this)">
           Close
         </button>
       </div>
@@ -75,10 +82,11 @@
   </template>
 
   <template id="list-template">
-    <li class="list-group-item" onclick="appendTemplateToBody(this)"></li>
+    <li id="" class="list-group-item" onclick="addCard(this)"></li>
   </template>
 
   <script src="./assets/scripts/script.js"></script>
+
 </body>
 
 </html>
