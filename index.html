@@ -1,56 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <meta name="author" content="" />
-    <title>Fantastic beasts Call center</title>
-    <link rel="stylesheet" href="./assets/css/styles.css" />
-  </head>
-  <body>
-    <header>
-      <div class="main-header">
-        <h1>Fantastic Beasts & how to call them</h1>
-      </div>
-    </header>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="" />
+  <title>Fantastic beasts Call center</title>
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+</head>
+
+<body>
+  <header>
+    <div class="main-header">
+      <h1>Fantastic Beasts & how to call them</h1>
+    </div>
+  </header>
+  <div class="content-wrapper">
     <section id="sidebar">
       <div id="buttons-1">
-        <button id="add-button" onclick="openAddForm()">Add Contact</button>
+        <button id="add-button" onclick="openAddForm()"> Add Contact </button>
       </div>
       <ul id="contacts" class="list-group">
-        <li class="list-group-item">long sheep</li>
-        <li class="list-group-item">small elephant</li>
-        <li class="list-group-item">green monkey</li>
+
       </ul>
     </section>
 
-    <!-- Modals -->
-    <div id="add-modal-backdrop" class="back-drop">
-      <div id="add-modal" class="modal-wrapper">
-        <form id="submission-form" action="">
-          <label id="name" for="name">Name</label>
-          <br />
-          <input id="name-input" type="text" name="Call-name" />
-          <br />
-          <label id="number" for="number">Phone</label>
-          <br />
-          <input id="number-input" type="text" name="Call-number" />
-          <br />
-          <div id="buttons-2">
-            <button id="add-beast" type="button" onclick="addBeast()">
-              Add
-            </button>
-            <button id="close-button" type="button" onclick="closeAddForm()">
-              Close
-            </button>
-          </div>
-        </form>
+    <section id="card-display">
+    </section>
+  </div>
+  <!-- Modals -->
+  <div id="add-modal-backdrop" class="back-drop">
+    <div id="add-modal" class="modal-wrapper">
+      <form id="submission-form" action="">
+        <label id="name" for="name">Name</label>
+        <br />
+        <input id="name-input" type="text" name="Call-name" />
+        <br />
+        <label id="number" for="number">Phone</label>
+        <br />
+        <input id="number-input" type="text" name="Call-number" />
+        <br />
+        <div id="buttons-2">
+          <button id="add-beast" type="button" onclick="addBeast()">
+            Add
+          </button>
+          <button id="close-button" type="button" onclick="closeAddForm()">
+            Close
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <template id="card-template">
+    <div id="cards" class="card-wrapper">
+      <div id="add-card">
+        <h2 class="card-name" onclick="modifyCardName()">NAME</h2>
+        <p class="card-phone">PHONE</p>
+      </div>
+      <div id="control-buttons">
+        <button id="call-button" type="button">Call</button>
+        <button id="delete-button" type="button" onclick="deleteCard()">
+          Delete
+        </button>
+        <button id="cancel-button" type="button" onclick="closeCard()">
+          Close
+        </button>
       </div>
     </div>
+  </template>
 
-    <script src="./assets/scripts/script.js"></script>
-  </body>
+  <template id="list-template">
+    <li class="list-group-item" onclick="appendTemplateToBody(this)"></li>
+  </template>
+
+  <script src="./assets/scripts/script.js"></script>
+</body>
+
 </html>
