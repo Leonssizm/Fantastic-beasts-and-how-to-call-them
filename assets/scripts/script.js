@@ -1,6 +1,6 @@
 
 let beasts = [
-    { name: "fox", phone: "598 999 999" },
+    { name: "fox", phone: "598 999 999"  },
     { name: "bear", phone: "598 111 222" }
 ];
 
@@ -65,17 +65,12 @@ function addBeast() {
 function addCard(el) {
     // get beast id
     const beastId = el.id.substring(3);
-
+    
     // TASK
     // BUG FIX:
-    // check if car with that id already exists
+    // check if card with that id already exists
     // if card does not exist with id card-{beastId} and do everything we are already doing
     // else do nothing
-
-
-
-
-
 
     // get beast data from array
     let beast;
@@ -83,8 +78,9 @@ function addCard(el) {
         if (beasts[i].name === beastId) {
             beast = beasts[i];
         }
-    }
 
+    }
+    
     // clone card template
     let template = document.querySelector('#card-template');
     let clonedCard = template.content.cloneNode(true);
@@ -93,32 +89,43 @@ function addCard(el) {
     clonedCard.querySelector('h2').innerText = beast.name;
     clonedCard.querySelector('p').innerText = beast.phone;
 
+    
     // display card
     let cardsDisplay = document.querySelector('#card-display');
     cardsDisplay.appendChild(clonedCard);
+
+    
+    
 }
 
 
 // TASK:
 function closeCard(closeButton) {
     // Delete from DOM
-
-
+    
+    closeButton.parentNode.parentNode.removeChild(closeButton.parentNode);
+    
+    
+  
     // Remove from beasts array
+    
+
+    /*
     let closeCard = document.querySelector('#cards');
     closeCard.style.display = "none";
     console.dir(closeCard)
+    */
 
 }
 
 // TASK:
-function deleteCard() {
+function deleteCard(deleteBtn) {
     // do same as closeCard
-
+    closeCard(deleteBtn);
     // also remove li element from sidebar from DOM
+   
 }
-
 // TASK
-function clallBeast() {
-
+function callBeast() {
+    alert(`CALLING: ${beasts[0].phone}`);
 }

@@ -65,19 +65,18 @@
   <template id="card-template">
     <div id="cards" class="card-wrapper">
       <div id="add-card">
-        <h2 class="card-name" onclick="modifyCardName()">NAME</h2>
+        <h2 class="card-name">NAME</h2>
         <p class="card-phone">PHONE</p>
       </div>
-      <div id="control-buttons">
-        <button id="call-button" type="button">Call</button>
-        <!-- id should be class -->
-        <button id="delete-button" type="button" onclick="deleteCard()">
-          Delete
-        </button>
-        <button class="cancel-button" type="button" onclick="closeCard(this)">
-          Close
-        </button>
-      </div>
+      <button id="call-button" type="button" onclick="callBeast()">Call</button>
+      <!-- id should be class -->
+      <button class="delete-button" type="button" onclick="deleteCard(this)">
+        Delete
+      </button>
+      <button class="cancel-button" type="button" onclick="closeCard(this)">
+        Close
+      </button>
+
     </div>
   </template>
 
