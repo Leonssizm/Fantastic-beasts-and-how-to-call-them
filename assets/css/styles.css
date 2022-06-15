@@ -124,7 +124,7 @@ h1 {
   border: 1px solid #c0c0c0;
 }
 /* Cards */
-#cards {
+.card-wrapper {
   box-sizing: border-box;
   width: 290px;
   height: 180px;
@@ -132,7 +132,7 @@ h1 {
   border-radius: 25px;
   margin: 50px;
 }
-#cards h2,
+.card-wrapper h2,
 p {
   margin: 20px;
 }

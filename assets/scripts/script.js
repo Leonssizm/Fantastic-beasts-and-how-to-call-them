@@ -59,20 +59,14 @@ function addBeast() {
 }
 
 
-
-
-
 function addCard(el) {
     // get beast id
     const beastId = el.id.substring(3);
     
-    // TASK
-    // BUG FIX:
-    // check if card with that id already exists
-    // if card does not exist with id card-{beastId} and do everything we are already doing
-    // else do nothing
+    if (document.querySelector("#card-" + beastId) === null) {
 
-    // get beast data from array
+                
+             // get beast data from array
     let beast;
     for (let i = 0; i < beasts.length; i++) {
         if (beasts[i].name === beastId) {
@@ -88,44 +82,63 @@ function addCard(el) {
     // change name & phone
     clonedCard.querySelector('h2').innerText = beast.name;
     clonedCard.querySelector('p').innerText = beast.phone;
+    clonedCard.querySelector('#CARD_ID').id = 'card-' + beastId;
 
     
     // display card
     let cardsDisplay = document.querySelector('#card-display');
     cardsDisplay.appendChild(clonedCard);
-
-    
-    
 }
 
-
+}
+      
 // TASK:
 function closeCard(closeButton) {
     // Delete from DOM
-    
     closeButton.parentNode.parentNode.removeChild(closeButton.parentNode);
-    
-    
-  
-    // Remove from beasts array
-    
-
-    /*
-    let closeCard = document.querySelector('#cards');
-    closeCard.style.display = "none";
-    console.dir(closeCard)
-    */
-
 }
 
 // TASK:
 function deleteCard(deleteBtn) {
     // do same as closeCard
     closeCard(deleteBtn);
+    //Delete from beasts array
+    cardId = deleteBtn.parentNode.id;
+    beastName = cardId.substring(5);
+
+    let beastIndex;
+    for (let i = 0; i < beasts.length; i++) {
+        if (beasts[i].name === beastName) {
+            beastIndex = i;
+            break;
+        }
+    }
+    beasts.splice(beastIndex, 1);
+    
     // also remove li element from sidebar from DOM
+    const itemRemove = document.querySelector("#li-" + beastName);
+    const contactsArray = document.querySelector("#contacts");
+    contactsArray.removeChild(itemRemove);
    
 }
 // TASK
-function callBeast() {
-    alert(`CALLING: ${beasts[0].phone}`);
+function callBeast(callBtn) {
+   
+
+    Id = callBtn.parentNode.id;
+    let beastsId = Id.substring(5);
+
+    let callId;
+    for (let i = 0; i<beasts.length; i++) {
+        if (beasts[i].name === beastsId) {
+            callId = i;
+        }
+        else {
+
+        }
+
+    }
+
+    alert(`CALLING: ${beasts[callId].phone}`);
+
 }

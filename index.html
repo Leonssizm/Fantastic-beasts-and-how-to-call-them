@@ -63,12 +63,12 @@
   <!-- Templates -->
 
   <template id="card-template">
-    <div id="cards" class="card-wrapper">
+    <div id="CARD_ID" class="card-wrapper">
       <div id="add-card">
         <h2 class="card-name">NAME</h2>
         <p class="card-phone">PHONE</p>
       </div>
-      <button id="call-button" type="button" onclick="callBeast()">Call</button>
+      <button id="call-button" type="button" onclick="callBeast(this)">Call</button>
       <!-- id should be class -->
       <button class="delete-button" type="button" onclick="deleteCard(this)">
         Delete
