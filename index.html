@@ -21,7 +21,7 @@
   <div class="content-wrapper">
     <section id="sidebar">
       <div id="buttons-1">
-        <button id="add-button" onclick="openAddForm()"> Add Contact </button>
+        <button id="add-button" onclick="handleModal('appear')"> Add Contact </button>
       </div>
       <ul id="contacts" class="list-group">
         <!--  List Items go Here -->
@@ -49,10 +49,10 @@
         <input id="number-input" type="text" name="Call-number" />
         <br />
         <div id="buttons-2">
-          <button id="add-beast" type="button" onclick="addBeast()">
+          <button id="add-beast" type="button" onclick="addBeast(this)">
             Add
           </button>
-          <button id="close-button" type="button" onclick="closeAddForm()">
+          <button id="close-button" type="button" onclick="handleModal('dissapear')">
             Close
           </button>
         </div>
@@ -81,10 +81,12 @@
   </template>
 
   <template id="list-template">
-    <li id="" class="list-group-item" onclick="addCard(this)"></li>
+    <li id="LI_ID" class="list-group-item" onclick="addCard(this)"></li>
   </template>
 
   <script src="./assets/scripts/script.js"></script>
+  <script src="assets/scripts/contacts.js"></script>
+  <script src="assets/scripts/cards.js"></script>
 
 </body>
 

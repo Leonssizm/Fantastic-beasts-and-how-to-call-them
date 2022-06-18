@@ -1,3 +1,4 @@
+/* GLOBAL */
 @font-face {
   font-family: DancingScript;
   src: url(/assets/fonts/DancingScript-VariableFont_wght.ttf);
@@ -20,43 +21,44 @@ h1 {
 .content-wrapper {
   display: flex;
 }
-
+/* Header & side-bar */
 .main-header {
-  background-color: aqua;
-  border-bottom: 1px solid #000000;
   height: 100px;
   margin: 0;
   padding: 0;
+  border-bottom: 1px solid #000000;
+  background-color: aqua;
 }
 #sidebar {
-  border-right: 1px solid #000000;
   width: 250px;
   height: calc(100vh - 101px);
+  border-right: 1px solid #000000;
   background-color: #fffcd7;
 }
 #add-button {
-  margin: 20px 25px 30px 25px;
   height: 40px;
   width: 200px;
+  margin: 20px 25px 30px 25px;
   background-color: #f5f5f5;
   border-radius: 15px;
   border: 1px solid #c0c0c0;
 }
 .list-group {
+  padding: inherit;
   list-style: none;
   text-decoration: none;
-  padding: inherit;
 }
 
 .list-group-item {
-  height: 35px;
-  width: 200px;
-  border-radius: 15px;
-  border: 1px solid #c0c0c0;
-  background-color: #f5f5f5;
-  margin: 20px 25px 30px 25px;
+  display: flex;
   box-sizing: border-box;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  margin: 20px 25px 30px 25px;
+  border: 1px solid #c0c0c0;
+  border-radius: 15px;
+  background-color: #f5f5f5;
 }
 
 /* Modals */
@@ -64,22 +66,21 @@ h1 {
 .modal-wrapper {
   height: 360px;
   width: 440px;
-  border-radius: 25px;
   border: 1px solid #c0c0c0;
+  border-radius: 25px;
   background-color: #d7ffd9;
 }
 #submission-form {
   margin-top: 40px;
 }
 #add-modal-backdrop {
-  width: 100%;
-  height: 100vh;
   display: none;
   justify-content: center;
   align-items: center;
   position: absolute;
   top: 0;
-  left: 0;
+  width: 100%;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
 }
 #add-modal {
@@ -87,28 +88,25 @@ h1 {
   /* display: none; */
 }
 
-#name {
-  margin: 40px;
-}
-#name-input {
-  margin: 40px;
-  width: 330px;
-}
+#name,
 #number {
   margin: 40px;
 }
+#name-input,
 #number-input {
-  margin: 40px;
+  margin: 35px;
   width: 330px;
 }
+
 .buttons-1 {
-  background-color: #92fb98;
-  border-radius: 0px 0px 25px 25px;
   height: 80px;
   width: 440px;
+  border-radius: 0 0 25px 25px;
+  background-color: #92fb98;
 }
-#add-beast {
-  margin: 27px 50px 26px 50px;
+#add-beast,
+#close-button {
+  margin: 27px 50px 25px 60px;
   height: 35px;
   width: 100px;
   background-color: #faf0b6;
@@ -116,21 +114,16 @@ h1 {
   border: 1px solid #c0c0c0;
 }
 #close-button {
-  margin: 27px 30px 26px 70px;
-  height: 35px;
-  width: 100px;
   background-color: #ccf8e9;
-  border-radius: 25px;
-  border: 1px solid #c0c0c0;
 }
 /* Cards */
 .card-wrapper {
   box-sizing: border-box;
   width: 290px;
   height: 180px;
+  margin: 50px;
   border: 1px solid #000000;
   border-radius: 25px;
-  margin: 50px;
 }
 .card-wrapper h2,
 p {
@@ -139,7 +132,9 @@ p {
 
 /* Card buttons */
 
-#call-button {
+#call-button,
+.delete-button,
+.cancel-button {
   border-radius: 25px;
   border: 1px solid #000000;
   width: 60px;
@@ -148,18 +143,8 @@ p {
   margin: 30px 0 10px 20px;
 }
 .delete-button {
-  border-radius: 25px;
-  border: 1px solid #000000;
-  width: 60px;
-  margin-right: 10px;
   background-color: red;
-  margin: 30px 0 10px 20px;
 }
 .cancel-button {
-  border-radius: 25px;
-  border: 1px solid #000000;
-  width: 60px;
-  margin-right: 10px;
   background-color: skyblue;
-  margin: 30px 0 10px 20px;
 }
