@@ -5,54 +5,48 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="" />
-  <meta name="keywords" content="" />
-  <meta name="author" content="" />
+  <meta name="description" content="Fatnastic beasts contact book" />
+  <meta name="keywords" content="fantastic,beasts,levan,kereselidze,call,contacts,list" />
+  <meta name="author" content="Levan Kereselidze" />
   <title>Fantastic beasts Call center</title>
   <link rel="stylesheet" href="./assets/css/styles.css" />
 </head>
 
 <body>
   <header>
-    <div class="main-header">
-      <h1>Fantastic Beasts & how to call them</h1>
-    </div>
+    <h1>Fantastic Beasts & how to call them</h1>
   </header>
   <div class="content-wrapper">
-    <section id="sidebar">
-      <div id="buttons-1">
-        <button id="add-button" onclick="handleModal('appear')"> Add Contact </button>
-      </div>
-      <ul id="contacts" class="list-group">
+    <section class="sidebar">
+      <button onclick="handleModal('show')">Add Contact</button>
+      <ul id="contacts">
         <!--  List Items go Here -->
       </ul>
     </section>
 
-    <section id="card-display">
+    <section id="cards-container">
       <!--  Cards go Here -->
     </section>
   </div>
 
-
-
-
   <!-- Modals -->
-  <div id="add-modal-backdrop" class="back-drop">
-    <div id="add-modal" class="modal-wrapper">
-      <form id="submission-form" action="">
-        <label id="name" for="name">Name</label>
-        <br />
-        <input id="name-input" type="text" name="Call-name" />
-        <br />
-        <label id="number" for="number">Phone</label>
-        <br />
-        <input id="number-input" type="text" name="Call-number" />
-        <br />
-        <div id="buttons-2">
-          <button id="add-beast" type="button" onclick="addBeast(this)">
+  <div id="add-modal" class="backdrop">
+    <div class="modal-wrapper">
+      <form class="submission-form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input id="name" type="text" name="name" />
+        </div>
+        <div class="form-group">
+          <label for="number">Phone</label>
+          <input id="number" type="text" name="number" />
+        </div>
+
+        <div class="add-modal-footer">
+          <button class="add-beast" type="button" onclick="addBeast(this)">
             Add
           </button>
-          <button id="close-button" type="button" onclick="handleModal('dissapear')">
+          <button class="close-button" type="button" onclick="handleModal('hide')">
             Close
           </button>
         </div>
@@ -64,19 +58,21 @@
 
   <template id="card-template">
     <div id="CARD_ID" class="card-wrapper">
-      <div id="add-card">
-        <h2 class="card-name">NAME</h2>
-        <p class="card-phone">PHONE</p>
-      </div>
-      <button id="call-button" type="button" onclick="callBeast(this)">Call</button>
-      <!-- id should be class -->
-      <button class="delete-button" type="button" onclick="deleteCard(this)">
-        Delete
-      </button>
-      <button class="cancel-button" type="button" onclick="closeCard(this)">
-        Close
-      </button>
+      <h2 class="card-name">NAME</h2>
+      <p class="card-phone">PHONE</p>
 
+      <div class="card-buttons-wrapper">
+        <button class="btn-card btn-call" type="button" onclick="callBeast(this)">
+          Call
+        </button>
+        <!-- id should be class -->
+        <button class="btn-card btn-delete" type="button" onclick="deleteCard(this)">
+          Delete
+        </button>
+        <button class="btn-card btn-cancel" type="button" onclick="closeCard(this)">
+          Close
+        </button>
+      </div>
     </div>
   </template>
 
@@ -87,7 +83,6 @@
   <script src="./assets/scripts/script.js"></script>
   <script src="assets/scripts/contacts.js"></script>
   <script src="assets/scripts/cards.js"></script>
-
 </body>
 
 </html>
